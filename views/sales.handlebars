@@ -1,0 +1,37 @@
+{{#each sales}}
+<div class="card card-body border-dark text-center mb-2 container" style="max-width: 55rem;">
+    <h3>Invoice Number: {{_id}}</h3>
+    <p>Customer Name: {{customerName}}</p>
+    <p>Address: {{address.houseNo}}, {{address.street}}, {{address.city}}, {{address.pincode}} </p>
+    <p>Date: {{date}}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body mb-2">
+                    <table>
+                        <thead>
+                            <tr>
+                                {{#each orders.[0].[0].[0]}}
+                                <th>{{@key}}</th>
+                                {{/each}}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each orders.[0].[0]}}
+                            <tr>
+                                {{#each this}}
+                                <td>{{this}}</td>
+                                {{/each}}
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Total Amount: {{totalAmount}}</p>
+</div>
+{{else}}
+<p>No Sales Done!</p>
+{{/each}}

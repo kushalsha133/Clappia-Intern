@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card card-body mb-2">
+                <h2>Customer Name: {{response.customerName}}</h4>
+                    <hr>
+                    <h3>Address: {{response.address.houseNo}}, {{response.address.street}}, {{response.address.city}}, {{response.address.pincode}}</h3>
+                    <hr>
+                    <h4>Date: {{response.date}}</h2>
+                <a href="/placeOrder/{{response._id}}" class="btn btn-dark btn-block">Place Order</a>
+            </div>

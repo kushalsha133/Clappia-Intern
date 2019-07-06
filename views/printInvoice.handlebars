@@ -1,0 +1,35 @@
+<div class="jumbotron text-center" style="background-color: #AFDDD4;">
+    <div class="card card-body mb-2 container">
+        <h3>Invoice Number: {{sales._id}}</h3>
+        <p>Customer Name: {{sales.customerName}}</p>
+        <p>Address: {{sales.address.houseNo}}, {{sales.address.street}}, {{sales.address.city}}, {{sales.address.pincode}} </p>
+        <p>Date: {{sales.date}}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card card-body mb-2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    {{#each sales.orders.[0].[0].[0]}}
+                                    <th>{{@key}}</th>
+                                    {{/each}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each sales.orders.[0].[0]}}
+                                <tr>
+                                    {{#each this}}
+                                    <td>{{this}}</td>
+                                    {{/each}}
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>Total Amount: {{sales.totalAmount}}</p>
+    </div>
+</div>

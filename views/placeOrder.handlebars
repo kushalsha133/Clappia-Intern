@@ -1,0 +1,49 @@
+<div class="container character-template">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            {{!--
+            <h3>{{customer.customerName}}'s Order: </h3> --}}
+            <hr>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="productName">Product Name :</label>
+                    <input type="text" class="form-control" name="productName" value="{{pname}}" />
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity :</label>
+                    <input type="number" class="form-control" name="quantity" value="{{q}}" />
+                </div>
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </form>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card card-body mb-2">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        {{#each order1.[0]}}
+                                        <th>{{@key}}</th>
+                                        {{/each}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each order1}}
+                                    <tr>
+                                        {{#each this}}
+                                        <td>{{this}}</td>
+                                        {{/each}}
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <a href="/orderConfirmed/{{id}}" class="btn btn-primary">Confirm Order</a>
+        </div>
+    </div>
+</div>
