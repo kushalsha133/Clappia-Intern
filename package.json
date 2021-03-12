@@ -12,7 +12,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "file-system": "^2.2.2",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.6.0",
     "nodemon": "^1.19.1"
